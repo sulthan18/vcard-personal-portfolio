@@ -829,26 +829,44 @@ main {
   line-height: 1.6;
 }
 
-
 /**
- * skills 
+ * Skills Section
  */
 
  .skills-title {
   margin-bottom: 20px;
+  font-size: var(--fs-2);
 }
 
 .skills-list {
   padding: 30px;
   list-style: none;
   display: flex;
+  justify-content: center;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr); /* 2 kolom */
-  grid-template-rows: repeat(2, auto); /* 2 baris */
+  grid-template-columns: repeat(2, 1fr); /* Default to 2 columns */
   gap: 20px; /* Jarak antar item */
+}
+
+@media (min-width: 580px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for tablets */
+  }
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(6, 1fr); /* 6 columns for larger tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(8, 1fr); /* 8 columns for desktops */
+  }
 }
 
 .title-wrapper {
@@ -858,8 +876,20 @@ main {
 
 .title-wrapper h5 {
   margin-top: 8px;
+  font-size: var(--fs-4);
 }
 
+@media (min-width: 580px) {
+  .title-wrapper h5 {
+    font-size: var(--fs-3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-wrapper h5 {
+    font-size: var(--fs-2);
+  }
+}
 
 /*-----------------------------------*\
   #PORTFOLIO
